@@ -99,7 +99,6 @@
     <span class="pass-tag emergency" data-modal="emergency">緊急聯絡</span>
 </div>
 
-<!-- 班機圖彈窗 -->
 <div id="flight-modal" class="modal" onclick="if(event.target===this)this.style.display='none'">
     <div class="modal-content">
         <span class="close" onclick="document.getElementById('flight-modal').style.display='none'">×</span>
@@ -153,7 +152,7 @@ const trip={start:new Date('2025-12-10'),days:[
         {t:"15:00",title:"抵達大分機場 OIT (IT750)",c:"通關＋行李約45分<br><b onclick=\"document.getElementById('flight-modal').style.display='flex'\">點這裡查看完整班機資訊（行李／座位／金額）</b>",lat:33.4806,lng:131.7355},
         {t:"15:50",title:"機場巴士 → 別府站",c:"50分直達",cost:1600,pass:"SUNQ (啟用此日)",save:1600,lat:33.2789,lng:131.4998,type:"sunq"},
         {t:"16:40",title:"入住 亀の井ホテル別府",c:"站走6分，休息整理",stay:true,lat:33.27892,lng:131.49985},
-        {t:"18:30",title:"地獄蒸晚餐",c:"獨旅首選：地獄蒸工房鐵輪，海鮮蒸 ¥2,000 起（步行/巴士 10 分）",lat:33.2795,lng:131.502}
+        {t:"17:30",title:"晚餐：お食事処 とよ常 別府駅前店",c:"人氣必吃「特上天丼」。週二本店公休，建議前往<b>別府駅前店</b>（別府站步行3分）。",lat:33.2789,lng:131.5008}
     ]},
     {d:"D2",date:"12/11（四）",title:"由布院全日",spots:[
         {t:"08:30",title:"巴士 → 由布院站",c:"50分",cost:1000,pass:"SUNQ",save:1000,lat:33.262,lng:131.359,type:"sunq"},
@@ -162,15 +161,17 @@ const trip={start:new Date('2025-12-10'),days:[
         {t:"14:00",title:"Floral Village",c:"龍貓、史努比拍照",lat:33.265,lng:131.365},
         {t:"16:30",title:"返回別府",c:"巴士50分",cost:1000,pass:"SUNQ",save:1000,type:"sunq"}
     ]},
-    {d:"D3",date:"12/12（五）",title:"別府地獄巡迴 → 博多",spots:[
+    {d:"D3",date:"12/12（五）",title:"別府纜車＋地獄精華 → 博多",spots:[
         {t:"08:00",title:"飯店 → 別府站西口",c:"步行6分"},
-        {t:"08:20",title:"地獄巡迴巴士出發",c:"搭5/41號巴士20分到海地獄前，買7地獄通票¥3,000(護照折扣¥2,700)",lat:33.3167,lng:131.4833},
-        {t:"08:40-11:30",title:"全7地獄巡迴",c:"最佳順序：海→鬼石坊主→かまど→血池→白池→(轉16號)→龍捲(每20-30分噴發)→鬼山。總步行3km",lat:33.3167,lng:131.4833},
-        {t:"11:50",title:"返回別府站",c:"搭16/16A巴士40分，¥550"},
-        {t:"12:00-13:00",title:"站內午餐",c:"拉麵或便當¥800"},
-        {t:"13:10",title:"Sonic特急 → 博多站",c:"2小時，自由席",cost:10940,pass:"JR (啟用此日)",save:10940,lat:33.5902,lng:130.4205,type:"jr"},
-        {t:"15:30",title:"入住 華盛頓R&B 博多駅前第2",c:"博多口走4分",stay:true,lat:33.59015,lng:130.42128},
-        {t:"17:00",title:"博多站地下街",c:"藥妝＋晚餐"}
+        {t:"08:20",title:"巴士 → 別府纜車 (非 SUNQ)",c:"搭41/50/51/52號巴士約 25 分鐘，<b>此段不含在 SUNQ Pass 內</b> (約 ¥480)。",lat:33.3134,lng:131.4284,type:""},
+        {t:"08:50",title:"別府纜車 (鶴見岳)",c:"來回約 2 小時，門票 ¥1,800。山頂眺望別府市區與瀨戶內海。",lat:33.3134,lng:131.4284},
+        {t:"11:00",title:"纜車 → 鐵輪地獄區",c:"搭巴士約 15 分鐘，此段可使用 SUNQ Pass。",lat:33.3167,lng:131.4833,type:"sunq"},
+        {t:"11:30",title:"地獄巡迴 (精華版 3個)",c:"建議參觀：海地獄、鬼石坊主地獄、灶地獄。<b>不需通票，單獨購票 $3 \times ¥450 = ¥1,350</b>",lat:33.3167,lng:131.4833},
+        {t:"12:30",title:"鐵輪區午餐",c:"在地獄區快速用餐 (例如：鐵輪蒸點心或簡餐)。"},
+        {t:"13:10",title:"巴士 → 別府站",c:"搭巴士約 20 分鐘，此段可使用 SUNQ Pass。",lat:33.2789,lng:131.4998,type:"sunq"},
+        {t:"13:50",title:"Sonic特急 → 博多站",c:"2小時，自由席。請在別府站東口搭乘。",cost:10940,pass:"JR (啟用此日)",save:10940,lat:33.5902,lng:130.4205,type:"jr"},
+        {t:"16:00",title:"入住 華盛頓R&B 博多駅前第2",c:"博多口走4分",stay:true,lat:33.59015,lng:130.42128},
+        {t:"17:30",title:"博多站地下街",c:"藥妝＋晚餐"}
     ]},
     {d:"D4",date:"12/13（六）",title:"門司港＋關門隧道＋春帆樓",spots:[
         {t:"09:00",title:"JR → 門司港站",c:"1小時10分",cost:2000,pass:"JR",save:2000,type:"jr"},
